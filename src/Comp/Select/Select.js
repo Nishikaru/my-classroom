@@ -1,13 +1,7 @@
-import React, { useEffect, useState } from 'react';
+
 import { Link } from 'react-router-dom';
 
 const Select = () => {
-    const [animation,setAnimation] = useState(false);
-    console.log(animation)
-    useEffect(()=>{
-        setAnimation(true)
-    },[])
-    console.log(animation)
     return (
         <div className='h-full w-full flex items-center justify-between'>
             <div className='bg-selectImgLeft h-screen w-[35vw] border-r-2 border-black bg-cover bg-center p-10'>

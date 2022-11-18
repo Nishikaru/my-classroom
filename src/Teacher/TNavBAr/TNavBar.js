@@ -1,18 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import {AiOutlinePlus} from 'react-icons/ai'
+import CreateClassModal from '../CreateClassModal/CreateClassModal';
 
 const TNavBar = () => {
+    const [AClass,setAClass] = useState(false);
+    const createClass = ()=>{
+        setAClass(!AClass);
+    }
     return (
         <div>
-            <nav className='flex justify-between px-80 py-3 bg-indigo-500 text-white'>
+            <nav className='flex justify-between items-center px-80 py-3 bg-indigo-500 text-white'>
                 <div className='text-xl font-bold'>
-                    <Link to='/student' className='capitalize'>Teachers room</Link>
+                    <Link to='/teacher' className='capitalize'>Teachers room</Link>
                 </div>
+                <CreateClassModal AClass={AClass} setAClass={setAClass}></CreateClassModal>
                 <div className='flex gap-6'>
-                    <Link className='capitalize hover:border-b-4 border-indigo-600 transition-all'>classes</Link>
-                    <Link className='capitalize hover:border-b-4 border-indigo-600 transition-all'>assignments</Link>
-                    <Link className='capitalize hover:border-b-4 border-indigo-600 transition-all'>results</Link>
+                    <div onClick={createClass} title='Create a class' className='p-2 border-2 border-indigo-600 hover:bg-indigo-600 rounded-md transition-all cursor-pointer'>
+                    <AiOutlinePlus></AiOutlinePlus>
+                    </div>
                 </div>
+                
+                
             </nav>
         </div>
     );
