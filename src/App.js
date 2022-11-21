@@ -7,6 +7,8 @@ import StudentLayout from './Layout/StudentLayout';
 import SHome from './Student/SHome/SHome';
 import THome from './Teacher/THome/THome';
 import TeacherLayout from './Layout/TeacherLayout';
+import ProtectedRout from './Comp/ProtectedRout/ProtectedRout';
+import Login from './Comp/Login/Login';
 
 function App() {
   const router = createBrowserRouter([
@@ -32,13 +34,17 @@ function App() {
     },
     {
       path:'/teacher',
-      element:<TeacherLayout></TeacherLayout>,
+      element:<ProtectedRout><TeacherLayout></TeacherLayout></ProtectedRout>,
       children:[
         {
           path:'/teacher',
           element:<THome></THome>
         }
       ]
+    },
+    {
+      path:'/login',
+      element:<Login></Login>
     }
   ])
   return (
