@@ -6,8 +6,8 @@ const ProtectedRout = ({children}) => {
     const {loading,user}=useContext(AuthContext);
     const location = useLocation();
     if(loading){
-        return <div class="bg-indigo-500">
-        <svg class="animate-spin h-5 w-5 mr-3 " viewBox="0 0 24 24">
+        return <div className="bg-indigo-500">
+        <svg className="animate-spin h-5 w-5 mr-3 " viewBox="0 0 24 24">
         </svg>
         Processing...
       </div>
