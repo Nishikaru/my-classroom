@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../Comp/UserContext/UserrContext';
 
 const CreateClassModal = ({AClass,setAClass}) => {
-    const {user} = useContext(AuthContext)
+    const {user,setRe} = useContext(AuthContext)
     const closeModal=()=>{
         setAClass(false);
     }
@@ -27,6 +27,7 @@ const CreateClassModal = ({AClass,setAClass}) => {
         })
         .then(res=>res.json())
         .then(Data=>{console.log(Data)
+            setRe(Data.id);
             closeModal();
         });
         console.log(data)

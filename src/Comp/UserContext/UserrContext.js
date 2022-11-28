@@ -38,6 +38,11 @@ const UserContext = ({children}) => {
     const LogOut = ()=>{
         return signOut(auth)
     }
+
+// re rendering
+
+const [re,setRe] = useState(0);
+
 // holding data
 useEffect(()=>{
     const unsubscribe = onAuthStateChanged(auth,currentUser=>{
@@ -48,7 +53,7 @@ useEffect(()=>{
 },[])
 
     // sending data from here
-    const info ={setLoading,loading,user,signupWithEmail,updateName,loginWithMail,goWithGoogle,LogOut}
+    const info ={setLoading,loading,user,signupWithEmail,updateName,loginWithMail,goWithGoogle,LogOut,re,setRe}
     return (
         <div>
             <AuthContext.Provider value={info} >
