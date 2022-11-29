@@ -15,7 +15,7 @@ const THomeCard = ({name}) => {
         setRe(id+'delete');
     }
     return (
-        <div className='flex items-center justify-evenly p-2 rounded-md bg-indigo-500 text-white'>
+        <div className='flex items-center justify-evenly p-2 rounded-md bg-indigo-500 text-white shadow-xl hover:translate-x-1 hover:translate-y-1 transition-all'>
             <div className='rounded-full'>
                 <img className='rounded-full' width={50} src={photoURL} alt="" />
             </div>

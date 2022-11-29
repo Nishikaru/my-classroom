@@ -24,7 +24,7 @@ function App() {
     },
     {
       path:'/student',
-      element:<StudentLayout></StudentLayout>,
+      element:<ProtectedRout><StudentLayout></StudentLayout></ProtectedRout>,
       children:[
         {
           path:'/student',
